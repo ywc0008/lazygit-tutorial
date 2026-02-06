@@ -1,0 +1,44 @@
+id: merge-conflict
+title: "Merge Conflicts"
+description: "Resolve merge conflicts using lazygit's conflict resolution UI"
+difficulty: intermediate
+estimatedMinutes: 10
+
+steps:
+  - id: merge-and-resolve
+    instruction: |
+      In this lesson you will merge a branch that conflicts with main
+      and resolve the conflict using lazygit.
+
+      The setup:
+        - You are on the "main" branch
+        - A "feature/friendly-greeting" branch exists with different
+          changes to the same lines in greeting.txt
+        - Merging will cause a conflict
+
+      How to merge and resolve:
+        1. Go to the Branches panel (press 3 or Tab until you reach it)
+        2. Select "feature/friendly-greeting"
+        3. Press M (uppercase) to merge it into the current branch (main)
+        4. A conflict will appear — go to the Files panel (press 2 or Tab)
+        5. Select the conflicting file (greeting.txt)
+        6. Press Enter to open the conflict resolution view
+        7. Navigate the conflict sections with arrow keys
+           and press Space to pick the version you want,
+           or press b to pick both versions
+        8. Alternatively, press e to open an editor and resolve manually
+        9. After resolving, go back to Files panel,
+           press Space to stage the resolved file
+       10. Press c to create the merge commit
+
+      Your task:
+        Merge feature/friendly-greeting into main and resolve all
+        conflicts. The final content of greeting.txt can be whichever
+        version you choose — just make sure no conflict markers remain.
+    hints:
+      - "Go to Branches panel with 3 or Tab"
+      - "Select feature/friendly-greeting and press M (uppercase, Shift+m) to merge"
+      - "After the conflict, go to Files panel and select greeting.txt"
+      - "Press Enter on the conflicting file to see the conflict view"
+      - "Use Space to pick a side, or press e to edit manually"
+      - "After resolving, press Space to stage the file, then c to commit"
