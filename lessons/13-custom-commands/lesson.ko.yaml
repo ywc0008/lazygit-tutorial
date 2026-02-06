@@ -1,0 +1,48 @@
+id: custom-commands
+title: "커스텀 명령어 설정"
+description: "lazygit 커스텀 명령어를 설정하여 나만의 단축키로 기능을 확장합니다"
+difficulty: advanced
+estimatedMinutes: 10
+
+steps:
+  - id: create-tag-command
+    instruction: |
+      이 레슨에서는 lazygit 커스텀 명령어를 설정하여 나만의
+      키보드 단축키를 추가하는 방법을 배웁니다.
+
+      lazygit 설정 파일이 다음 경로에 준비되어 있습니다:
+        .config/lazygit/config.yml
+
+      주석 처리된 커스텀 명령어 템플릿이 포함되어 있으며,
+      이 명령어는 annotated git tag를 생성합니다. 과제:
+
+        1. 설정 파일을 열고 customCommands 섹션의 주석을
+           해제하세요. 이 명령어는 commits 컨텍스트에서 "T" 키를
+           누르면 사용자가 입력한 이름으로 annotated tag를
+           생성합니다.
+
+        2. 설정 파일을 수정한 후 lazygit을 다시 로드하거나
+           재시작하여 커스텀 명령어를 적용하세요.
+
+        3. Commits 패널로 이동(숫자 4)하고 커밋을 선택한 뒤
+           T를 눌러 커스텀 명령어를 실행하세요.
+
+        4. 태그 이름을 묻는 프롬프트가 나타나면 v1.0을
+           입력하세요.
+
+      커스텀 명령어 템플릿은 lazygit의 프롬프트 시스템을 사용합니다:
+        - key: "T"              — 키보드 단축키
+        - command: "git tag..." — 실행할 셸 명령어
+        - context: "commits"    — commits 패널에서만 사용 가능
+        - prompts:              — 명령 실행 전 표시할 입력 폼
+
+      참고: 이 튜토리얼 연습에서는 git 명령어를 직접 사용해
+      태그를 생성해도 됩니다. 핵심은 커스텀 명령어가 어떻게
+      작동하는지 이해하는 것입니다.
+    hints:
+      - ".config/lazygit/config.yml 파일을 편집해 customCommands 섹션의 주석을 해제하세요"
+      - "각 줄의 '# ' 접두사를 제거하세요"
+      - "주석 해제 후 YAML 들여쓰기가 올바른지 확인하세요"
+      - "lazygit을 재시작하여 새 설정을 로드하세요"
+      - "Commits 패널에서 T를 누르고 태그 이름으로 'v1.0'을 입력하세요"
+      - "또는 git tag -a v1.0 -m 'v1.0' 명령어로 직접 태그를 생성할 수 있습니다"

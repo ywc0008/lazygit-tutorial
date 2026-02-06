@@ -1,0 +1,47 @@
+id: custom-commands
+title: "Custom Commands Configuration"
+description: "Configure lazygit custom commands to extend its functionality with your own shortcuts"
+difficulty: advanced
+estimatedMinutes: 10
+
+steps:
+  - id: create-tag-command
+    instruction: |
+      In this lesson you will learn how to configure lazygit custom
+      commands to add your own keyboard shortcuts.
+
+      A lazygit config file has been prepared at:
+        .config/lazygit/config.yml
+
+      It contains a commented-out custom command template that
+      creates an annotated git tag. Your task:
+
+        1. Open the config file and uncomment the customCommands
+           section. The command binds the "T" key in the commits
+           context to create an annotated tag with a user-provided
+           name.
+
+        2. After editing the config, reload lazygit (or restart it)
+           so the custom command takes effect.
+
+        3. Go to the Commits panel (press 4), select a commit,
+           and press T to trigger your custom command.
+
+        4. When prompted for a tag name, enter: v1.0
+
+      The custom command template uses lazygit's prompt system:
+        - key: "T"              — the keyboard shortcut
+        - command: "git tag..." — the shell command to run
+        - context: "commits"    — only available in commits panel
+        - prompts:              — input forms shown before running
+
+      Note: For this tutorial exercise, you can also create the
+      tag directly using git commands if you prefer. The key
+      learning is understanding how custom commands work.
+    hints:
+      - "Edit .config/lazygit/config.yml to uncomment the customCommands section"
+      - "Remove the '# ' prefix from each line in the customCommands block"
+      - "Make sure the YAML indentation is correct after uncommenting"
+      - "Restart lazygit to load the new config"
+      - "In the Commits panel, press T and enter 'v1.0' as the tag name"
+      - "Alternatively: git tag -a v1.0 -m 'v1.0' to create the tag directly"
