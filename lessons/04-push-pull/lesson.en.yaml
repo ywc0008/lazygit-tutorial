@@ -1,0 +1,45 @@
+id: push-pull
+title: "Push & Pull"
+description: "Learn how to sync with remote repositories using push and pull"
+difficulty: beginner
+estimatedMinutes: 5
+
+steps:
+  - id: pull-changes
+    instruction: |
+      In a team, others push changes that you need to pull down.
+
+      This scenario simulates a remote repository. A colleague has
+      pushed a commit with "colleague.js" that you do not have yet.
+      You also have a local commit with "myfile.js" that the remote
+      does not have.
+
+      How to pull in lazygit:
+        - Press p (lowercase) anywhere to pull from the remote
+
+      Note: lazygit may ask you to choose a pull strategy
+      (merge, rebase, etc.). Choose the default or "merge" option.
+
+      Your task:
+        Pull the remote changes so that "colleague.js" appears
+        in your working directory.
+    hints:
+      - "Press p (lowercase) to pull"
+      - "If prompted for a strategy, select merge (or press Enter for default)"
+      - "After pulling, you should see colleague.js in your file listing"
+      - "Check the Commits panel - you should see both your commit and the colleague's commit"
+
+  - id: push-changes
+    instruction: |
+      Now push your local commits to the remote so your colleague
+      can see your work too.
+
+      How to push in lazygit:
+        - Press P (uppercase / Shift+P) anywhere to push to the remote
+
+      Your task:
+        Push your changes to the remote repository.
+    hints:
+      - "Press P (Shift+P, uppercase) to push"
+      - "After pushing, the remote should have all your commits"
+      - "If push fails, make sure you pulled first (previous step)"
