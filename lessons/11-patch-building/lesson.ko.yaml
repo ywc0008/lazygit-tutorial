@@ -1,0 +1,43 @@
+id: patch-building
+title: "패치 빌딩 (부분 스테이징)"
+description: "파일 전체가 아닌 개별 hunk이나 라인 단위로 스테이징합니다"
+difficulty: advanced
+estimatedMinutes: 10
+
+steps:
+  - id: stage-user-hunk-only
+    instruction: |
+      이 레슨에서는 lazygit의 패치 빌딩 기능을 사용해 파일의
+      변경사항 중 일부만 스테이징하는 방법을 배웁니다.
+
+      app.js 파일이 두 개의 섹션에서 수정되었습니다:
+        - Section A (User Management): console.log 라인 추가
+        - Section B (Product Management): console.log 라인 추가
+
+      과제: User Management 변경사항(Section A)만 커밋하고,
+      Product Management 변경사항(Section B)은 스테이징하지
+      않은 채로 남겨두세요.
+
+      lazygit에서 부분 스테이징하는 방법:
+        1. Files 패널로 이동 (숫자 2)
+        2. app.js를 선택하고 Enter를 눌러 diff 확인
+        3. 변경사항이 hunk 단위로 표시됩니다
+        4. "Getting user" / "Deleting user" 변경이 포함된
+           hunk으로 이동
+        5. Space를 눌러 해당 hunk만 스테이징
+        6. "Getting product" / "Deleting product" 변경이 포함된
+           hunk은 스테이징하지 마세요
+        7. Escape를 눌러 Files 패널로 돌아가기
+        8. "user"라는 단어가 포함된 메시지로 커밋
+           (예: "Add logging for user operations")
+
+      커밋 후, user 관련 console.log 라인만 커밋에 포함되어야
+      합니다. product 관련 변경사항은 스테이징되지 않은 수정사항으로
+      남아있어야 합니다.
+    hints:
+      - "숫자 2를 눌러 Files 패널로 이동하세요"
+      - "app.js를 선택하고 Enter를 눌러 diff hunk을 확인하세요"
+      - "화살표 키로 hunk 사이를 이동하세요"
+      - "hunk에서 Space를 누르면 해당 hunk만 스테이징됩니다"
+      - "User Management(Section A) 관련 hunk만 스테이징하세요"
+      - "Escape로 돌아간 뒤 'user'가 포함된 메시지로 커밋하세요"

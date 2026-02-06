@@ -1,0 +1,43 @@
+id: patch-building
+title: "Patch Building (Partial Staging)"
+description: "Stage individual hunks or lines from a file instead of staging the entire file"
+difficulty: advanced
+estimatedMinutes: 10
+
+steps:
+  - id: stage-user-hunk-only
+    instruction: |
+      In this lesson you will learn how to stage only part of a file's
+      changes using lazygit's patch building feature.
+
+      The file app.js has been modified in two separate sections:
+        - Section A (User Management): added console.log lines
+        - Section B (Product Management): added console.log lines
+
+      Your task is to commit ONLY the User Management changes
+      (Section A) while leaving the Product Management changes
+      (Section B) unstaged.
+
+      How to partially stage in lazygit:
+        1. Go to the Files panel (press 2)
+        2. Select app.js and press Enter to view the diff
+        3. You will see the changes split into hunks
+        4. Navigate to the hunk containing "Getting user" /
+           "Deleting user" changes
+        5. Press Space to stage that hunk
+        6. Do NOT stage the hunk with "Getting product" /
+           "Deleting product" changes
+        7. Press Escape to go back to the Files panel
+        8. Commit with a message containing the word "user"
+           (e.g., "Add logging for user operations")
+
+      After committing, only the user-related console.log lines
+      should be in the commit. The product-related changes should
+      remain as unstaged modifications.
+    hints:
+      - "Press 2 to go to the Files panel"
+      - "Select app.js and press Enter to see the diff hunks"
+      - "Use arrow keys to navigate between hunks"
+      - "Press Space on a hunk to stage just that hunk"
+      - "Only stage the hunks related to User Management (Section A)"
+      - "Press Escape to return, then commit with a message containing 'user'"
