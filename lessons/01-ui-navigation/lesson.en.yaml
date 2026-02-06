@@ -1,0 +1,34 @@
+id: ui-navigation
+title: "UI Navigation"
+description: "Learn lazygit's panel layout and basic navigation"
+difficulty: beginner
+estimatedMinutes: 5
+
+steps:
+  - id: explore-panels
+    instruction: |
+      Welcome to lazygit! In this lesson you will explore the interface.
+
+      lazygit has 5 main panels:
+        1. Status   - shows repo name and current branch
+        2. Files    - shows changed files (staged / unstaged)
+        3. Branches - lists local and remote branches
+        4. Commits  - shows commit history
+        5. Stash    - shows stashed changes
+
+      Navigation basics:
+        - Press Tab or number keys (1-5) to switch between panels
+        - Use arrow keys (Up/Down) to select items within a panel
+        - Press Enter to view details of the selected item
+        - Press q to quit lazygit
+
+      Your task:
+        Open lazygit and visit each panel. Look at the files,
+        branches, and commits that have been set up for you.
+        When you are done exploring, quit with q.
+    hints:
+      - "Press Tab to cycle through panels, or press 1-5 to jump directly"
+      - "The Files panel shows modified files - you should see app.js, config.json, and style.css"
+      - "The Branches panel shows 'main' and 'feature/add-logging'"
+      - "The Commits panel shows 3 commits on main"
+      - "Press q to quit when you are done"
