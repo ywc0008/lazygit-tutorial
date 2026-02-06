@@ -1,0 +1,36 @@
+id: staging-commit
+title: "Staging & Commit"
+description: "Learn how to stage files and create commits in lazygit"
+difficulty: beginner
+estimatedMinutes: 5
+
+steps:
+  - id: stage-and-commit
+    instruction: |
+      In this lesson you will stage files and create a commit.
+
+      Your working directory has 3 changes waiting:
+        - app.js    (modified - new functions added)
+        - index.html (modified - footer added)
+        - style.css  (new untracked file)
+
+      How to stage and commit in lazygit:
+        1. Go to the Files panel (press 2 or Tab)
+        2. Stage files:
+           - Press Space on a file to stage/unstage it individually
+           - Press a to stage ALL files at once
+        3. Commit:
+           - Press c to open the commit message editor
+           - Type a message that contains the word "first"
+             (e.g., "first feature commit")
+           - Press Enter to confirm the commit
+
+      Your task:
+        Stage all 3 files and create a commit. The commit message
+        must contain the word "first" (case-insensitive).
+    hints:
+      - "Press 2 or Tab to go to the Files panel"
+      - "Press a to stage all files at once"
+      - "Press c to open the commit message input"
+      - "Type a message containing 'first', then press Enter"
+      - "After committing, the Files panel should be empty"
