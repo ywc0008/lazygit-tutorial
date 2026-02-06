@@ -1,0 +1,50 @@
+id: interactive-rebase
+title: "인터랙티브 리베이스"
+description: "squash와 fixup을 사용해 지저분한 커밋 히스토리를 정리합니다"
+difficulty: intermediate
+estimatedMinutes: 10
+
+steps:
+  - id: squash-commits
+    instruction: |
+      이 레슨에서는 인터랙티브 리베이스를 사용해 지저분한 커밋
+      히스토리를 정리합니다.
+
+      현재 레포지토리에 6개의 커밋이 있습니다:
+        1. Initial commit
+        2. feat: add feature A
+        3. fix typo in feature A        (#2에 합쳐야 함)
+        4. feat: complete feature A
+        5. remove debug code            (#4에 합쳐야 함)
+        6. feat: add feature B
+
+      커밋 #3과 #5는 정리용 커밋으로, 각각의 부모 기능 커밋에
+      합쳐야 합니다.
+
+      lazygit에서 인터랙티브 리베이스하는 방법:
+        1. Commits 패널로 이동 (숫자 4)
+        2. 수정할 범위의 가장 오래된 커밋으로 이동
+           (예: "feat: add feature A")
+        3. e를 눌러 해당 커밋부터 인터랙티브 리베이스 시작
+        4. 리베이스 모드에서 합칠 커밋에 대해:
+           - 해당 커밋으로 이동 (예: "fix typo in feature A")
+           - s = squash (이전 커밋에 합치기, 메시지 합침)
+           - f = fixup (이전 커밋에 합치기, 메시지 버림)
+        5. 필요하면 ctrl+j / ctrl+k로 커밋 순서 변경
+           (정리 커밋이 부모 커밋 바로 다음에 오도록)
+        6. 완료되면 m을 눌러 리베이스 옵션 메뉴를 열고
+           "continue"를 선택하여 리베이스 적용
+
+      과제:
+        "fix typo in feature A"와 "remove debug code" 커밋을
+        각각의 부모 기능 커밋에 squash 또는 fixup하세요.
+        최종 히스토리는 4개 이하의 커밋이어야 하며,
+        모든 파일(README.md, feature.js, feature-b.js)이
+        그대로 존재해야 합니다.
+    hints:
+      - "숫자 4를 눌러 Commits 패널로 이동하세요"
+      - "'feat: add feature A'로 이동한 뒤 e를 눌러 리베이스를 시작하세요"
+      - "리베이스 모드에서 'fix typo in feature A'로 이동해 s 또는 f를 누르세요"
+      - "'remove debug code'도 마찬가지로 'feat: complete feature A'에 합치세요"
+      - "ctrl+j / ctrl+k로 커밋 순서를 변경할 수 있습니다"
+      - "m을 눌러 리베이스 옵션을 열고 continue로 완료하세요"

@@ -1,0 +1,53 @@
+id: interactive-rebase
+title: "Interactive Rebase"
+description: "Clean up messy commit history by squashing and fixuping commits"
+difficulty: intermediate
+estimatedMinutes: 10
+
+steps:
+  - id: squash-commits
+    instruction: |
+      In this lesson you will clean up a messy commit history using
+      interactive rebase.
+
+      The repository currently has 6 commits:
+        1. Initial commit
+        2. feat: add feature A
+        3. fix typo in feature A        (should be squashed into #2)
+        4. feat: complete feature A
+        5. remove debug code            (should be squashed into #4)
+        6. feat: add feature B
+
+      Commits #3 and #5 are cleanup commits that should be merged
+      into their parent feature commits.
+
+      How to interactive rebase in lazygit:
+        1. Go to the Commits panel (press 4)
+        2. Navigate to the oldest commit you want to modify
+           (e.g., "feat: add feature A")
+        3. Press e to start interactive rebase from that commit
+        4. Now you are in rebase mode. For each commit you want
+           to squash:
+           - Navigate to the commit (e.g., "fix typo in feature A")
+           - Press s to squash it (merges into previous commit,
+             combines messages)
+           - Or press f to fixup (merges into previous commit,
+             discards this commit's message)
+        5. If needed, reorder commits with ctrl+j / ctrl+k
+           so the cleanup commit is right after its parent
+        6. When done, continue the rebase by pressing m to
+           bring up rebase options, then select "continue"
+
+      Your task:
+        Squash or fixup the "fix typo in feature A" and
+        "remove debug code" commits into their respective parent
+        feature commits. The final history should have 4 or fewer
+        commits, and all files (README.md, feature.js, feature-b.js)
+        must still exist.
+    hints:
+      - "Press 4 to go to the Commits panel"
+      - "Navigate to 'feat: add feature A' and press e to start rebase"
+      - "In rebase mode, move to 'fix typo in feature A' and press s or f"
+      - "Similarly squash 'remove debug code' into 'feat: complete feature A'"
+      - "Use ctrl+j / ctrl+k to reorder commits if needed"
+      - "Press m for rebase options, then continue to finish"
