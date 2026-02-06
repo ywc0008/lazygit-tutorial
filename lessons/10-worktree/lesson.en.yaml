@@ -1,0 +1,47 @@
+id: worktree
+title: "Worktree"
+description: "Work on multiple branches simultaneously using git worktrees"
+difficulty: advanced
+estimatedMinutes: 10
+
+steps:
+  - id: create-worktree
+    instruction: |
+      In this lesson you will create a git worktree to work on
+      multiple branches simultaneously without switching.
+
+      The repository has two branches:
+        - main (current): the main development branch
+        - hotfix/urgent-bug: a branch for an urgent fix
+
+      Normally you would switch branches to work on the hotfix,
+      but that disrupts your current work. With worktrees, you
+      can check out the hotfix branch in a separate directory
+      and work on both at the same time.
+
+      How to create a worktree in lazygit:
+        1. Go to the Branches panel (press 3)
+        2. Navigate to "hotfix/urgent-bug"
+        3. Press w to create a worktree for this branch
+        4. lazygit will prompt for a path - confirm or customize
+           the worktree directory location
+        5. The worktree will be created, checking out the branch
+           in a separate directory
+
+      Benefits of worktrees:
+        - No need to stash or commit incomplete work
+        - Run builds on one branch while editing another
+        - Quick context switching for urgent fixes
+        - Each worktree has its own working directory
+        - lazygit can switch between worktrees seamlessly
+
+      Your task:
+        Create a worktree for the "hotfix/urgent-bug" branch.
+        After completing, `git worktree list` should show at
+        least 2 worktrees (the main one and the new one).
+    hints:
+      - "Press 3 to go to the Branches panel"
+      - "Navigate to 'hotfix/urgent-bug' in the branch list"
+      - "Press w to open the worktree creation dialog"
+      - "Confirm the path when prompted to create the worktree"
+      - "After creation, git worktree list should show 2 entries"

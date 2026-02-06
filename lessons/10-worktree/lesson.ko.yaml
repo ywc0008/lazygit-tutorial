@@ -1,0 +1,47 @@
+id: worktree
+title: "워크트리"
+description: "git worktree를 사용해 여러 브랜치를 동시에 작업합니다"
+difficulty: advanced
+estimatedMinutes: 10
+
+steps:
+  - id: create-worktree
+    instruction: |
+      이 레슨에서는 git worktree를 만들어 브랜치 전환 없이
+      여러 브랜치를 동시에 작업하는 방법을 배웁니다.
+
+      레포지토리에 두 개의 브랜치가 있습니다:
+        - main (현재): 메인 개발 브랜치
+        - hotfix/urgent-bug: 긴급 수정용 브랜치
+
+      보통은 hotfix 작업을 위해 브랜치를 전환해야 하지만,
+      그러면 현재 작업이 중단됩니다. Worktree를 사용하면
+      hotfix 브랜치를 별도의 디렉토리에 체크아웃해서
+      두 브랜치를 동시에 작업할 수 있습니다.
+
+      lazygit에서 worktree 생성하는 방법:
+        1. Branches 패널로 이동 (숫자 3)
+        2. "hotfix/urgent-bug"로 이동
+        3. w를 눌러 해당 브랜치의 worktree 생성
+        4. lazygit이 경로를 묻습니다 - 워크트리 디렉토리
+           위치를 확인하거나 수정하세요
+        5. 워크트리가 생성되어 별도 디렉토리에 브랜치가
+           체크아웃됩니다
+
+      Worktree의 장점:
+        - 미완성 작업을 stash하거나 커밋할 필요 없음
+        - 한 브랜치에서 빌드하면서 다른 브랜치 편집 가능
+        - 긴급 수정 시 빠른 컨텍스트 전환
+        - 각 worktree는 독립적인 작업 디렉토리를 가짐
+        - lazygit에서 worktree 간 전환도 가능
+
+      과제:
+        "hotfix/urgent-bug" 브랜치의 worktree를 생성하세요.
+        완료 후 `git worktree list`에 최소 2개의 워크트리
+        (메인 + 새로 생성한 것)가 표시되어야 합니다.
+    hints:
+      - "숫자 3을 눌러 Branches 패널로 이동하세요"
+      - "브랜치 목록에서 'hotfix/urgent-bug'로 이동하세요"
+      - "w를 눌러 워크트리 생성 대화상자를 여세요"
+      - "경로가 나오면 확인하여 워크트리를 생성하세요"
+      - "생성 후 git worktree list에 2개 항목이 보여야 합니다"
