@@ -1,0 +1,59 @@
+id: stash
+title: "Stash"
+description: "Stash uncommitted changes and restore them later"
+difficulty: intermediate
+estimatedMinutes: 5
+
+steps:
+  - id: stash-changes
+    instruction: |
+      In this lesson you will learn to stash your work-in-progress
+      and restore it later.
+
+      The setup:
+        - You are on the "main" branch with uncommitted changes:
+          app.js has been modified and temp-notes.txt is a new file
+        - A "release" branch also exists
+
+      Why stash?
+        Sometimes you need to switch branches or pull changes, but you
+        have uncommitted work. Stashing saves your changes temporarily
+        so you can come back to them later.
+
+      How to stash in lazygit:
+        - In the Files panel, press s (lowercase) to stash all changes
+        - You can type a stash message or just press Enter for the default
+
+      Your task:
+        Stash your current changes. After stashing, your working
+        directory should be completely clean (no modified or untracked files).
+    hints:
+      - "Make sure you are in the Files panel (press 2 or Tab)"
+      - "Press s (lowercase) to stash all changes"
+      - "Enter a descriptive name or just press Enter for the default"
+      - "After stashing, the Files panel should be empty"
+
+  - id: pop-stash
+    instruction: |
+      Your changes are safely stashed. The working directory is clean.
+
+      Now restore your changes by popping the stash.
+
+      How to pop stash in lazygit:
+        - Go to the Stash panel (press 5, or Tab until you reach it)
+        - Select the stash entry
+        - Press g (lowercase) to pop — this restores the changes AND
+          removes the stash entry
+        - Note: pressing Space would apply the stash (restore changes)
+          but keep the stash entry for later use
+
+      Your task:
+        Pop the stash to restore your changes. After popping, your
+        files should be back (app.js modified, temp-notes.txt present)
+        and the stash list should be empty.
+    hints:
+      - "Press 5 or Tab to navigate to the Stash panel"
+      - "Select the stash entry with arrow keys"
+      - "Press g (lowercase) to pop the stash"
+      - "Do NOT use Space — that applies without removing the stash entry"
+      - "After popping, check that Files panel shows your changes again"
