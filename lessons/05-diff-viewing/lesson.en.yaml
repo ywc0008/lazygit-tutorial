@@ -1,0 +1,48 @@
+id: diff-viewing
+title: "Diff Viewing & Selective Staging"
+description: "Learn to view diffs and selectively stage individual files"
+difficulty: beginner
+estimatedMinutes: 5
+
+steps:
+  - id: stage-app-only
+    instruction: |
+      In this lesson you will learn to view diffs and stage files selectively.
+
+      Two files have been modified: app.js and config.json.
+
+      Viewing diffs:
+        - In the Files panel, use Up/Down to select a file
+        - The right side automatically shows the diff for the selected file
+        - Select app.js to see its changes — notice it has TWO separate
+          hunks (groups of changes): one in the Auth section and one in
+          the Data Processing section
+
+      Selective staging:
+        - Press Space on a file to stage ONLY that file
+        - Press Tab to switch between the Unstaged and Staged sections
+
+      Your task:
+        Select app.js and view its diff. Then stage ONLY app.js
+        (do NOT stage config.json). Commit with a message that
+        contains the word "partial".
+    hints:
+      - "Use arrow keys in the Files panel to select app.js"
+      - "Press Space to stage the selected file"
+      - "Press Tab to see your staged files vs unstaged files"
+      - "After staging app.js, press c to open the commit dialog"
+      - "Type a message containing 'partial', e.g. 'partial: update app logic'"
+
+  - id: commit-remaining
+    instruction: |
+      Good — you committed app.js while leaving config.json unstaged.
+
+      Now finish up by staging and committing the remaining changes.
+
+      Your task:
+        Stage config.json and commit it with any message you like.
+        After this, your working directory should be completely clean.
+    hints:
+      - "Select config.json in the Files panel and press Space to stage it"
+      - "Press c to commit, then type your message and confirm"
+      - "After committing, the Files panel should be empty"
