@@ -1,0 +1,48 @@
+id: cherry-pick
+title: "Cherry-pick"
+description: "Pick specific commits from one branch and apply them to another"
+difficulty: intermediate
+estimatedMinutes: 10
+
+steps:
+  - id: cherry-pick-commit
+    instruction: |
+      In this lesson you will cherry-pick a specific commit from a
+      feature branch to the main branch.
+
+      The repository has two branches:
+        - main: contains only the initial commit
+        - feature/mixed-work: contains 3 commits
+            1. "experiment: try new approach"  (creates experiment.js)
+            2. "feat: add utility functions"   (creates utils.js)
+            3. "experiment: continue testing"  (modifies experiment.js)
+
+      You want ONLY the "feat: add utility functions" commit on main.
+      The experimental commits should NOT be brought over.
+
+      How to cherry-pick in lazygit:
+        1. Go to the Branches panel (press 3)
+        2. Navigate to "feature/mixed-work" and press Enter
+           to view its commits
+        3. Find the "feat: add utility functions" commit
+        4. Press Shift+C (uppercase C) to copy the commit
+           for cherry-picking
+        5. Press Escape to go back to the Branches panel
+        6. Make sure you are on the main branch
+           (select it and press Space to checkout if needed)
+        7. Press Shift+V (uppercase V) to paste (apply)
+           the cherry-picked commit
+
+      Your task:
+        Cherry-pick ONLY the "feat: add utility functions" commit
+        from feature/mixed-work to main. After completing:
+        - utils.js should exist on main
+        - experiment.js should NOT exist on main
+        - feature/mixed-work branch should still exist
+    hints:
+      - "Press 3 to go to the Branches panel"
+      - "Select feature/mixed-work and press Enter to see its commits"
+      - "Navigate to 'feat: add utility functions' and press Shift+C to copy"
+      - "Press Escape to return to Branches, ensure you are on main"
+      - "Press Shift+V to paste the cherry-picked commit onto main"
+      - "Only the utils.js file should appear on main, not experiment.js"

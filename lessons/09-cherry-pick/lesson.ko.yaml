@@ -1,0 +1,47 @@
+id: cherry-pick
+title: "체리픽"
+description: "다른 브랜치에서 특정 커밋만 골라서 현재 브랜치에 적용합니다"
+difficulty: intermediate
+estimatedMinutes: 10
+
+steps:
+  - id: cherry-pick-commit
+    instruction: |
+      이 레슨에서는 기능 브랜치에서 특정 커밋을 골라 main 브랜치에
+      적용하는 cherry-pick을 배웁니다.
+
+      레포지토리에 두 개의 브랜치가 있습니다:
+        - main: 초기 커밋만 있음
+        - feature/mixed-work: 3개의 커밋 포함
+            1. "experiment: try new approach"  (experiment.js 생성)
+            2. "feat: add utility functions"   (utils.js 생성)
+            3. "experiment: continue testing"  (experiment.js 수정)
+
+      main 브랜치에는 "feat: add utility functions" 커밋만
+      가져오고 싶습니다. 실험적인 커밋은 가져오지 않아야 합니다.
+
+      lazygit에서 cherry-pick하는 방법:
+        1. Branches 패널로 이동 (숫자 3)
+        2. "feature/mixed-work"를 선택하고 Enter를 눌러
+           커밋 목록 보기
+        3. "feat: add utility functions" 커밋을 찾기
+        4. Shift+C (대문자 C)를 눌러 cherry-pick 복사
+        5. Escape를 눌러 Branches 패널로 돌아가기
+        6. main 브랜치에 있는지 확인
+           (필요하면 선택 후 Space로 체크아웃)
+        7. Shift+V (대문자 V)를 눌러 cherry-pick 붙여넣기
+           (커밋 적용)
+
+      과제:
+        feature/mixed-work에서 "feat: add utility functions"
+        커밋만 main에 cherry-pick하세요. 완료 후:
+        - main에 utils.js가 존재해야 합니다
+        - main에 experiment.js는 존재하지 않아야 합니다
+        - feature/mixed-work 브랜치는 그대로 존재해야 합니다
+    hints:
+      - "숫자 3을 눌러 Branches 패널로 이동하세요"
+      - "feature/mixed-work를 선택하고 Enter로 커밋 목록을 보세요"
+      - "'feat: add utility functions'에서 Shift+C로 복사하세요"
+      - "Escape로 Branches 패널로 돌아가고 main에 있는지 확인하세요"
+      - "Shift+V로 cherry-pick한 커밋을 붙여넣으세요"
+      - "main에는 utils.js만 있어야 하고, experiment.js는 없어야 합니다"
