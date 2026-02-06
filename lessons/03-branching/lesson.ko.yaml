@@ -1,0 +1,51 @@
+id: branching
+title: "브랜치 만들기"
+description: "브랜치를 생성하고 전환하는 방법을 배웁니다"
+difficulty: beginner
+estimatedMinutes: 5
+
+steps:
+  - id: create-branch
+    instruction: |
+      브랜치를 사용하면 메인 코드에 영향을 주지 않고 기능을 개발할 수 있습니다.
+
+      현재 저장소에는 main 브랜치에 3개의 커밋이 있습니다.
+
+      lazygit에서 브랜치를 만들고 전환하는 방법:
+        1. Branches 패널로 이동 (숫자 3 또는 Tab)
+        2. n을 눌러 새 브랜치 생성
+        3. "feature"를 브랜치 이름으로 입력하고 Enter
+           - lazygit이 자동으로 새 브랜치로 전환합니다
+
+      과제:
+        "feature"라는 이름의 새 브랜치를 만들고,
+        해당 브랜치로 전환되었는지 확인하세요.
+    hints:
+      - "숫자 3을 눌러 Branches 패널로 이동하세요"
+      - "n을 눌러 새 브랜치를 만드세요"
+      - "정확히 'feature'를 입력하고 Enter를 누르세요"
+      - "상단의 브랜치 표시가 'feature'로 바뀌어야 합니다"
+
+  - id: commit-on-branch
+    instruction: |
+      지금 "feature" 브랜치에 있습니다. 변경사항을 만들고 커밋하세요.
+
+      원하는 방식으로 파일을 수정할 수 있습니다:
+        - 기존 파일 수정 (app.js, utils.js, 또는 README.md)
+        - 또는 새 파일 생성
+
+      lazygit에서의 단계:
+        1. 먼저 lazygit 밖에서 파일을 편집하세요 (에디터 또는 터미널 사용)
+           - 또는 Files 패널에서 파일 위에서 e를 눌러 편집
+        2. Files 패널로 이동 (숫자 2)
+        3. 변경된 파일을 스테이징 (Space 또는 a)
+        4. c로 커밋, 메시지 입력 후 Enter
+
+      과제:
+        저장소에 아무 변경이나 하고 "feature" 브랜치에
+        커밋을 만드세요.
+    hints:
+      - "파일 위에서 e를 눌러 에디터로 열 수 있습니다"
+      - "또는 lazygit을 종료(q)하고, 터미널에서 파일을 수정한 뒤 다시 열 수 있습니다"
+      - "편집 후 Files 패널(2)에서 Space로 스테이징, c로 커밋하세요"
+      - "이 단계에서는 어떤 커밋 메시지든 괜찮습니다"

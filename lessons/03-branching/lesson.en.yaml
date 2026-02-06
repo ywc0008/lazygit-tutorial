@@ -1,0 +1,51 @@
+id: branching
+title: "Branching"
+description: "Learn how to create branches and switch between them"
+difficulty: beginner
+estimatedMinutes: 5
+
+steps:
+  - id: create-branch
+    instruction: |
+      Branches let you work on features without affecting the main code.
+
+      The repo currently has 3 commits on the main branch.
+
+      How to create and switch branches in lazygit:
+        1. Go to the Branches panel (press 3 or Tab)
+        2. Press n to create a new branch
+        3. Type "feature" as the branch name and press Enter
+           - lazygit automatically switches to the new branch
+
+      Your task:
+        Create a new branch called "feature" and make sure
+        you are on it (HEAD should point to "feature").
+    hints:
+      - "Press 3 to go to the Branches panel"
+      - "Press n to create a new branch"
+      - "Type exactly 'feature' and press Enter"
+      - "The branch indicator at the top should show 'feature'"
+
+  - id: commit-on-branch
+    instruction: |
+      Now you are on the "feature" branch. Make a change and commit it.
+
+      You can edit files in any way you like:
+        - Modify an existing file (app.js, utils.js, or README.md)
+        - Or create a new file
+
+      Steps in lazygit:
+        1. First, edit a file outside lazygit (use your editor or terminal)
+           - Or press e on a file in the Files panel to edit it
+        2. Go to the Files panel (press 2)
+        3. Stage the changed file (Space or a)
+        4. Commit with c, type a message, and press Enter
+
+      Your task:
+        Make any change to the repo and create a commit on
+        the "feature" branch.
+    hints:
+      - "You can press e on a file to open it in your editor"
+      - "Or quit lazygit (q), edit a file in terminal, then reopen lazygit"
+      - "After editing, go to Files panel (2), stage with Space, commit with c"
+      - "Any commit message is fine for this step"
