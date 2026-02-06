@@ -1,0 +1,44 @@
+id: bisect
+title: "Finding Bugs with Bisect"
+description: "Use binary search through commit history to find the exact commit that introduced a bug"
+difficulty: advanced
+estimatedMinutes: 10
+
+steps:
+  - id: bisect-find-bug
+    instruction: |
+      In this lesson you will use git bisect to find which commit
+      introduced a bug. The repository has 8 commits (v1 through v8).
+      One of these commits added the line "BUG_INTRODUCED" to app.js.
+
+      Your task is to use lazygit's bisect feature to find the
+      exact commit that introduced the bug.
+
+      How to check if a commit is "bad":
+        Look at app.js — if it contains "BUG_INTRODUCED", the
+        commit is bad. If it does not, the commit is good.
+
+      How to bisect in lazygit:
+        1. Go to the Commits panel (press 4)
+        2. Navigate to the latest commit (v8) — this is the
+           known "bad" commit since the bug exists now
+        3. Press b to mark it as bad and start bisect
+        4. Navigate to the oldest commit (v1) — this is the
+           known "good" commit (no bug existed then)
+        5. Press b to mark it as good
+        6. Git will now checkout a middle commit for you to test
+        7. Check app.js to see if "BUG_INTRODUCED" exists:
+           - If yes: press b to mark as bad
+           - If no: press b to mark as good
+        8. Repeat step 7 until git identifies the first bad commit
+
+      The bisect will narrow down to the commit that introduced
+      the bug through binary search (testing ~3 commits instead
+      of all 8).
+    hints:
+      - "Press 4 to go to the Commits panel"
+      - "Navigate to v8 (latest) and press b to mark as bad"
+      - "Navigate to v1 (oldest) and press b to mark as good"
+      - "Git checks out a middle commit — look at app.js for 'BUG_INTRODUCED'"
+      - "Press b to mark each tested commit as good or bad"
+      - "The bug was introduced in the v5 commit"

@@ -1,0 +1,43 @@
+id: bisect
+title: "Bisect로 버그 찾기"
+description: "커밋 히스토리를 이진 탐색하여 버그를 도입한 정확한 커밋을 찾습니다"
+difficulty: advanced
+estimatedMinutes: 10
+
+steps:
+  - id: bisect-find-bug
+    instruction: |
+      이 레슨에서는 git bisect를 사용해 버그를 도입한 커밋을
+      찾습니다. 레포지토리에 8개의 커밋(v1~v8)이 있으며,
+      이 중 하나가 app.js에 "BUG_INTRODUCED" 라인을 추가했습니다.
+
+      과제: lazygit의 bisect 기능을 사용해 버그를 도입한
+      정확한 커밋을 찾으세요.
+
+      커밋이 "bad"인지 확인하는 방법:
+        app.js를 확인하세요 — "BUG_INTRODUCED"가 포함되어
+        있으면 bad, 없으면 good입니다.
+
+      lazygit에서 bisect하는 방법:
+        1. Commits 패널로 이동 (숫자 4)
+        2. 최신 커밋(v8)으로 이동 — 현재 버그가 존재하므로
+           이것이 "bad" 커밋입니다
+        3. b를 눌러 bad로 마킹하고 bisect 시작
+        4. 가장 오래된 커밋(v1)으로 이동 — 그때는 버그가
+           없었으므로 "good" 커밋입니다
+        5. b를 눌러 good으로 마킹
+        6. Git이 자동으로 중간 커밋을 체크아웃합니다
+        7. app.js에 "BUG_INTRODUCED"가 있는지 확인:
+           - 있으면: b를 눌러 bad로 마킹
+           - 없으면: b를 눌러 good으로 마킹
+        8. Git이 첫 번째 bad 커밋을 찾을 때까지 7번을 반복
+
+      bisect는 이진 탐색을 통해 8개 커밋 중 ~3개만 테스트해서
+      버그 커밋을 찾아냅니다.
+    hints:
+      - "숫자 4를 눌러 Commits 패널로 이동하세요"
+      - "v8(최신)으로 이동해 b를 눌러 bad로 마킹하세요"
+      - "v1(가장 오래된)으로 이동해 b를 눌러 good으로 마킹하세요"
+      - "Git이 중간 커밋을 체크아웃합니다 — app.js에서 'BUG_INTRODUCED'를 확인하세요"
+      - "b를 눌러 각 테스트 커밋을 good 또는 bad로 마킹하세요"
+      - "버그는 v5 커밋에서 도입되었습니다"
