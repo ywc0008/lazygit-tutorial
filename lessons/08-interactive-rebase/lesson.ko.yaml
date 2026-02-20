@@ -48,3 +48,31 @@ steps:
       - "'remove debug code'도 마찬가지로 'feat: complete feature A'에 합치세요"
       - "ctrl+j / ctrl+k로 커밋 순서를 변경할 수 있습니다"
       - "m을 눌러 리베이스 옵션을 열고 continue로 완료하세요"
+
+  - id: reword-commit
+    instruction: |
+      히스토리를 깔끔하게 정리했습니다! 이제 커밋 메시지를
+      수정(reword)하는 방법을 배워봅시다.
+
+      때로는 커밋 내용은 그대로 두면서 메시지만 더 명확하게
+      바꾸고 싶을 때가 있습니다. lazygit에서는 인터랙티브
+      리베이스를 통해 쉽게 할 수 있습니다.
+
+      lazygit에서 커밋 메시지 reword 방법:
+        1. Commits 패널로 이동 (숫자 4)
+        2. 메시지를 수정할 커밋으로 이동
+        3. r (소문자)을 눌러 커밋 메시지 수정 모드 진입
+        4. 새 메시지를 입력하고 Enter (또는 저장)
+
+      과제:
+        가장 오래된 커밋("Initial commit")의 메시지를
+        "project"라는 단어가 포함된 메시지로 변경하세요.
+        (예: "project: initial setup")
+
+      참고: r은 단일 커밋의 메시지만 변경하며, 커밋의
+      내용(파일 변경사항)은 변경하지 않습니다.
+    hints:
+      - "숫자 4를 눌러 Commits 패널로 이동하세요"
+      - "가장 오래된 커밋('Initial commit')으로 이동하세요"
+      - "r을 눌러 메시지 수정 모드에 진입하세요"
+      - "'project'가 포함된 새 메시지를 입력하세요 (예: 'project: initial setup')"

@@ -45,3 +45,30 @@ steps:
       - "Press w to open the worktree creation dialog"
       - "Confirm the path when prompted to create the worktree"
       - "After creation, git worktree list should show 2 entries"
+
+  - id: remove-worktree
+    instruction: |
+      You have successfully created a worktree!
+
+      Once you are done with the hotfix work, you should remove
+      the worktree to keep things tidy. Leaving unused worktrees
+      around wastes disk space and can cause confusion.
+
+      How to remove a worktree in lazygit:
+        1. Go to the Branches panel (press 3)
+        2. Press w to open the worktree menu
+        3. Select the worktree you want to remove
+        4. Press d to remove it
+
+      Alternatively, you can remove it from the terminal:
+        git worktree remove <worktree-path>
+
+      Your task:
+        Remove the worktree you created. After completing,
+        `git worktree list` should show only the main worktree
+        (1 entry).
+    hints:
+      - "Press w in the Branches panel to see the worktree list"
+      - "Select the worktree to remove and press d"
+      - "Or use git worktree remove from the terminal"
+      - "After removal, git worktree list should show only 1 entry"

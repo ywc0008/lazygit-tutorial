@@ -51,3 +51,31 @@ steps:
       - "Similarly squash 'remove debug code' into 'feat: complete feature A'"
       - "Use ctrl+j / ctrl+k to reorder commits if needed"
       - "Press m for rebase options, then continue to finish"
+
+  - id: reword-commit
+    instruction: |
+      You have cleaned up the history nicely! Now let's learn how
+      to reword a commit message.
+
+      Sometimes you want to keep the commit's changes but make the
+      message clearer or more descriptive. lazygit makes this easy
+      through interactive rebase.
+
+      How to reword a commit message in lazygit:
+        1. Go to the Commits panel (press 4)
+        2. Navigate to the commit whose message you want to change
+        3. Press r (lowercase) to enter reword mode
+        4. Type the new message and press Enter (or save)
+
+      Your task:
+        Change the oldest commit message ("Initial commit") to a
+        message that contains the word "project".
+        (e.g., "project: initial setup")
+
+      Note: r only changes the commit message, not the commit's
+      content (file changes remain the same).
+    hints:
+      - "Press 4 to go to the Commits panel"
+      - "Navigate to the oldest commit ('Initial commit')"
+      - "Press r to enter reword mode"
+      - "Type a new message containing 'project' (e.g., 'project: initial setup')"

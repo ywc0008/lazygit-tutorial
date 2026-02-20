@@ -58,3 +58,30 @@ steps:
       - "g (소문자)를 눌러 stash를 pop하세요"
       - "Space를 사용하지 마세요 — apply는 스태시 항목을 삭제하지 않습니다"
       - "pop 후 Files 패널에 변경사항이 다시 표시되는지 확인하세요"
+
+  - id: named-stash
+    instruction: |
+      stash의 기본 사용법을 익혔습니다. 이제 이름 있는 stash를
+      활용하는 방법을 배워봅시다.
+
+      stash에 설명적인 이름을 붙이면 나중에 여러 stash 중에서
+      원하는 것을 쉽게 찾을 수 있습니다.
+
+      현재 작업 디렉토리에 수정된 파일들이 있습니다. 이번에는
+      "health"라는 단어가 포함된 이름으로 stash를 생성하세요.
+
+      lazygit에서 이름 있는 stash 생성 방법:
+        1. Files 패널로 이동 (숫자 2)
+        2. s를 눌러 stash 생성
+        3. 프롬프트에서 이름을 입력하세요
+           (예: "health check feature WIP")
+        4. Enter를 눌러 확인
+
+      과제:
+        "health"가 포함된 이름으로 변경사항을 stash하세요.
+        stash 후 작업 디렉토리가 깨끗해야 합니다.
+    hints:
+      - "Files 패널에서 s를 눌러 stash를 생성하세요"
+      - "이름 프롬프트에 'health'가 포함된 메시지를 입력하세요"
+      - "예: 'health check feature WIP'"
+      - "stash 후 Files 패널이 비어 있어야 합니다"

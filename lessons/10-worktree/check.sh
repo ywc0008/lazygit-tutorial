@@ -14,5 +14,15 @@ case "$STEP" in
 
     exit 0
     ;;
+  2)
+    # Check: only 1 worktree remains (the main one)
+    WORKTREE_COUNT=$(git worktree list | wc -l | tr -d ' ')
+    if [ "$WORKTREE_COUNT" -gt 1 ]; then
+        echo "FAIL: More than 1 worktree still exists — remove the extra worktree"
+        exit 1
+    fi
+
+    exit 0
+    ;;
 esac
 exit 1

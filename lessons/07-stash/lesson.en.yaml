@@ -57,3 +57,30 @@ steps:
       - "Press g (lowercase) to pop the stash"
       - "Do NOT use Space — that applies without removing the stash entry"
       - "After popping, check that Files panel shows your changes again"
+
+  - id: named-stash
+    instruction: |
+      You have learned the basics of stashing and popping. Now let's
+      practice creating a named stash.
+
+      Adding a descriptive name to your stash makes it easier to find
+      the right stash entry later when you have multiple stashes.
+
+      Your working directory currently has modified files. This time,
+      create a stash with a name that contains the word "health".
+
+      How to create a named stash in lazygit:
+        1. Go to the Files panel (press 2)
+        2. Press s to create a stash
+        3. Type a descriptive name in the prompt
+           (e.g., "health check feature WIP")
+        4. Press Enter to confirm
+
+      Your task:
+        Stash your changes with a name containing "health".
+        After stashing, your working directory should be clean.
+    hints:
+      - "Press s in the Files panel to create a stash"
+      - "Type a message containing 'health' in the stash name prompt"
+      - "For example: 'health check feature WIP'"
+      - "After stashing, the Files panel should be empty"

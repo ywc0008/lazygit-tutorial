@@ -45,3 +45,32 @@ steps:
       - "Escape로 Branches 패널로 돌아가고 main에 있는지 확인하세요"
       - "Shift+V로 cherry-pick한 커밋을 붙여넣으세요"
       - "main에는 utils.js만 있어야 하고, experiment.js는 없어야 합니다"
+
+  - id: revert-cherry-pick
+    instruction: |
+      cherry-pick이 성공적으로 완료되었습니다!
+
+      하지만 코드 리뷰 결과, cherry-pick한 커밋을 되돌려야
+      하는 상황이 발생했습니다. git revert를 사용하면 커밋의
+      변경사항을 안전하게 취소할 수 있습니다.
+
+      revert vs reset:
+        - revert: 취소 이력이 새 커밋으로 남음 (안전, 협업에 적합)
+        - reset: 커밋 자체를 삭제 (위험, 히스토리 변경)
+
+      lazygit에서 커밋 revert하는 방법:
+        1. Commits 패널로 이동 (숫자 4)
+        2. cherry-pick한 커밋("feat: add utility functions")을 선택
+        3. t를 눌러 revert 실행
+        4. revert 커밋이 자동으로 생성됩니다
+
+      과제:
+        cherry-pick한 "feat: add utility functions" 커밋을
+        revert하세요. 완료 후:
+        - utils.js가 더 이상 존재하지 않아야 합니다
+        - "Revert" 또는 "revert"가 포함된 새 커밋이 있어야 합니다
+    hints:
+      - "숫자 4를 눌러 Commits 패널로 이동하세요"
+      - "cherry-pick한 커밋을 선택하세요"
+      - "t를 눌러 revert를 실행하세요"
+      - "revert 후 utils.js가 삭제되고 revert 커밋이 생성됩니다"

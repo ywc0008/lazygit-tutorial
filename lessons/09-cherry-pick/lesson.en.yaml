@@ -46,3 +46,33 @@ steps:
       - "Press Escape to return to Branches, ensure you are on main"
       - "Press Shift+V to paste the cherry-picked commit onto main"
       - "Only the utils.js file should appear on main, not experiment.js"
+
+  - id: revert-cherry-pick
+    instruction: |
+      The cherry-pick was successful!
+
+      However, after a code review it turns out you need to undo the
+      cherry-picked commit. Using git revert, you can safely undo
+      a commit's changes without rewriting history.
+
+      Revert vs Reset:
+        - revert: creates a new commit that undoes the changes (safe,
+          good for collaboration)
+        - reset: removes the commit entirely (risky, rewrites history)
+
+      How to revert a commit in lazygit:
+        1. Go to the Commits panel (press 4)
+        2. Select the cherry-picked commit ("feat: add utility functions")
+        3. Press t to revert
+        4. A revert commit will be created automatically
+
+      Your task:
+        Revert the cherry-picked "feat: add utility functions"
+        commit. After completing:
+        - utils.js should no longer exist
+        - A new commit containing "Revert" or "revert" should exist
+    hints:
+      - "Press 4 to go to the Commits panel"
+      - "Select the cherry-picked commit"
+      - "Press t to revert the commit"
+      - "After reverting, utils.js should be gone and a revert commit should exist"

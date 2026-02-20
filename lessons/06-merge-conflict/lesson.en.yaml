@@ -42,3 +42,33 @@ steps:
       - "Press Enter on the conflicting file to see the conflict view"
       - "Use Space to pick a side, or press e to edit manually"
       - "After resolving, press Space to stage the file, then c to commit"
+
+  - id: delete-merged-branch
+    instruction: |
+      You have successfully resolved the merge conflict!
+
+      After a merge is complete, it is good practice to delete the
+      feature branch that is no longer needed. This keeps your branch
+      list clean and organized.
+
+      How to delete a branch in lazygit:
+        1. Go to the Branches panel (press 3 or Tab)
+        2. Select "feature/friendly-greeting"
+        3. Press d to delete the branch
+        4. Confirm the deletion when prompted
+
+      Notes:
+        - Only delete branches that have been merged. Deleting
+          unmerged branches could result in lost work
+        - You cannot delete the currently checked-out branch
+        - lazygit will warn you if you try to delete an unmerged branch
+
+      Your task:
+        Delete the "feature/friendly-greeting" branch. After
+        completing, the branch should no longer appear in the
+        branch list.
+    hints:
+      - "Press 3 to go to the Branches panel"
+      - "Select feature/friendly-greeting"
+      - "Press d to delete the branch"
+      - "Confirm the deletion when prompted"

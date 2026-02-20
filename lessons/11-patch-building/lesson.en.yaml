@@ -41,3 +41,28 @@ steps:
       - "Press Space on a hunk to stage just that hunk"
       - "Only stage the hunks related to User Management (Section A)"
       - "Press Escape to return, then commit with a message containing 'user'"
+
+  - id: commit-remaining-changes
+    instruction: |
+      Well done! You have successfully committed only the User Management
+      changes.
+
+      The Product Management changes (Section B) are still unstaged in
+      your working directory. Now commit the remaining changes to clean
+      up your working directory.
+
+      Your task:
+        1. Check the remaining changes in the Files panel
+        2. Stage the remaining app.js changes (Product Management)
+           - Press Space to stage the entire file, or
+           - Press Enter to view the diff and stage by hunk
+        3. Commit with a message containing the word "product"
+           (e.g., "Add logging for product operations")
+
+      After committing, your working directory should be clean
+      (no modified files).
+    hints:
+      - "Check the remaining changes in the Files panel (press 2)"
+      - "Press Space to stage the file"
+      - "Commit with a message containing 'product'"
+      - "After committing, the Files panel should be empty"

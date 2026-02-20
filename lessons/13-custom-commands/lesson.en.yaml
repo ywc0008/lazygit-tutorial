@@ -45,3 +45,26 @@ steps:
       - "Restart lazygit to load the new config"
       - "In the Commits panel, press T and enter 'v1.0' as the tag name"
       - "Alternatively: git tag -a v1.0 -m 'v1.0' to create the tag directly"
+
+  - id: create-second-tag
+    instruction: |
+      You have successfully created the v1.0 tag!
+
+      Now that you are familiar with using custom commands, create
+      a second tag using the same method. This time, create a v2.0
+      tag on the latest commit.
+
+      Your task:
+        1. Select the latest commit in the Commits panel
+        2. Use the custom command (T) or a git command to create
+           a v2.0 annotated tag
+
+      After completing, both v1.0 and v2.0 tags should exist.
+
+      Tip: By reusing the custom command you configured, you can
+      see how useful lazygit custom commands are in real workflows.
+    hints:
+      - "Go to Commits panel (press 4) and select the latest commit"
+      - "Press T to run the custom tag creation command"
+      - "Enter 'v2.0' as the tag name"
+      - "Alternatively: git tag -a v2.0 -m 'v2.0' to create the tag directly"
