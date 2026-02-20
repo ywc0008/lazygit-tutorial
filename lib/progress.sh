@@ -34,7 +34,7 @@ is_completed() {
     local lesson_name="$1"
     if [ -f "$PROGRESS_FILE" ]; then
         # Use grep with fixed-string and whole-line matching
-        grep -qFx "$lesson_name" "$PROGRESS_FILE" 2>/dev/null
+        grep -Fx "$lesson_name" "$PROGRESS_FILE" >/dev/null 2>&1
         return $?
     fi
     return 1

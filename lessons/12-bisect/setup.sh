@@ -19,9 +19,8 @@ git add . && git commit -m "v3: add dashboard"
 echo "version 4 - add settings" >> app.js
 git add . && git commit -m "v4: add settings page"
 
-# THIS commit introduces the bug
-echo "BUG_INTRODUCED" >> app.js
-echo "version 5 - add notifications" >> app.js
+# THIS commit introduces the bug in a separate file (does NOT touch app.js)
+echo "BUG_INTRODUCED" > config.js
 git add . && git commit -m "v5: add notifications"
 
 echo "version 6 - add themes" >> app.js

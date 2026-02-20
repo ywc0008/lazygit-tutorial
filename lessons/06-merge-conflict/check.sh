@@ -47,5 +47,14 @@ case "$STEP" in
 
     exit 0
     ;;
+  2)
+    # Check: feature/friendly-greeting branch no longer exists
+    if git branch --list "feature/friendly-greeting" | grep "feature/friendly-greeting" >/dev/null; then
+      echo "FAIL: Branch 'feature/friendly-greeting' still exists — delete it with 'd' in Branches panel"
+      exit 1
+    fi
+
+    exit 0
+    ;;
 esac
 exit 1

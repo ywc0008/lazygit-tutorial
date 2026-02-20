@@ -21,10 +21,10 @@ case "$STEP" in
 
     # Check that the remote has the local "my feature" commit
     REMOTE_LOG=$(cd "$REMOTE_DIR" && git log --oneline --all)
-    if ! printf '%s' "$REMOTE_LOG" | grep -q "my feature"; then
+    if ! printf '%s' "$REMOTE_LOG" | grep "my feature" >/dev/null; then
         exit 1
     fi
-    if ! printf '%s' "$REMOTE_LOG" | grep -q "colleague"; then
+    if ! printf '%s' "$REMOTE_LOG" | grep "colleague" >/dev/null; then
         exit 1
     fi
 

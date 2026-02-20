@@ -19,7 +19,7 @@ case "$STEP" in
 
     # Check 3: latest commit message contains "first" (case-insensitive)
     LATEST_MSG=$(git log -1 --format='%s')
-    if ! printf '%s' "$LATEST_MSG" | grep -iq "first"; then
+    if ! printf '%s' "$LATEST_MSG" | grep -i "first" >/dev/null; then
         exit 1
     fi
 

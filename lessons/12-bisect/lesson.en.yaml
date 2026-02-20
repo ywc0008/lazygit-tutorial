@@ -9,14 +9,15 @@ steps:
     instruction: |
       In this lesson you will use git bisect to find which commit
       introduced a bug. The repository has 8 commits (v1 through v8).
-      One of these commits added the line "BUG_INTRODUCED" to app.js.
+      One of these commits created a file called config.js containing
+      the text "BUG_INTRODUCED".
 
       Your task is to use lazygit's bisect feature to find the
       exact commit that introduced the bug.
 
       How to check if a commit is "bad":
-        Look at app.js — if it contains "BUG_INTRODUCED", the
-        commit is bad. If it does not, the commit is good.
+        Look at config.js — if it exists and contains "BUG_INTRODUCED",
+        the commit is bad. If config.js does not exist, the commit is good.
 
       How to bisect in lazygit:
         1. Go to the Commits panel (press 4)
@@ -27,7 +28,7 @@ steps:
            known "good" commit (no bug existed then)
         5. Press b to mark it as good
         6. Git will now checkout a middle commit for you to test
-        7. Check app.js to see if "BUG_INTRODUCED" exists:
+        7. Check if config.js exists and contains "BUG_INTRODUCED":
            - If yes: press b to mark as bad
            - If no: press b to mark as good
         8. Repeat step 7 until git identifies the first bad commit
@@ -39,6 +40,35 @@ steps:
       - "Press 4 to go to the Commits panel"
       - "Navigate to v8 (latest) and press b to mark as bad"
       - "Navigate to v1 (oldest) and press b to mark as good"
-      - "Git checks out a middle commit — look at app.js for 'BUG_INTRODUCED'"
+      - "Git checks out a middle commit — check if config.js exists and contains 'BUG_INTRODUCED'"
       - "Press b to mark each tested commit as good or bad"
       - "The bug was introduced in the v5 commit"
+
+  - id: revert-bug-commit
+    instruction: |
+      You found the bug commit with bisect! Now it's time to fix it.
+
+      After bisect completes, you need to first end (reset) the
+      bisect session, then revert the buggy commit.
+
+      Your task:
+        1. End the bisect session
+           - lazygit: press b in Commits panel to reset bisect
+           - Or terminal: git bisect reset
+        2. Revert the commit that introduced the bug (v5)
+           - lazygit: select the v5 commit in Commits panel,
+             press t to revert
+           - Or terminal: git revert <commit-hash>
+
+      After completing:
+        - bisect should be inactive
+        - config.js should no longer exist
+        - A revert commit should exist
+
+      Note: bisect reset returns HEAD to its original position
+      (v8). Then you can run the revert.
+    hints:
+      - "First end bisect: press b in Commits panel → reset, or git bisect reset"
+      - "Find the v5 commit and press t to revert it"
+      - "Or use git revert <v5 commit hash>"
+      - "After completing, config.js should no longer exist"

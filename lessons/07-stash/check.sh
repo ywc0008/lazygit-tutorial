@@ -37,5 +37,21 @@ case "$STEP" in
 
     exit 0
     ;;
+  3)
+    # Check 1: working directory is clean (tracked files)
+    if [ -n "$(git status --porcelain -uno)" ]; then
+      echo "FAIL: Tracked file changes remain — stash your changes first"
+      exit 1
+    fi
+
+    # Check 2: stash entry exists with "health" in the message
+    STASH_MSG=$(git stash list 2>/dev/null || true)
+    if ! echo "$STASH_MSG" | grep -i "health" >/dev/null; then
+      echo "FAIL: No stash entry with 'health' in the name — stash with a descriptive name containing 'health'"
+      exit 1
+    fi
+
+    exit 0
+    ;;
 esac
 exit 1

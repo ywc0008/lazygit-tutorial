@@ -29,5 +29,21 @@ case "$STEP" in
 
     exit 0
     ;;
+  2)
+    # Check: the oldest commit message contains "project" (case-insensitive)
+    OLDEST_MSG=$(git log --reverse --format='%s' | head -1)
+    if ! echo "$OLDEST_MSG" | grep -i "project" >/dev/null; then
+        echo "FAIL: The oldest commit message should contain 'project' — use 'r' to reword it"
+        exit 1
+    fi
+
+    # Verify all files still exist
+    if [ ! -f "feature.js" ] || [ ! -f "feature-b.js" ] || [ ! -f "README.md" ]; then
+        echo "FAIL: Some files are missing — make sure reword did not lose any changes"
+        exit 1
+    fi
+
+    exit 0
+    ;;
 esac
 exit 1

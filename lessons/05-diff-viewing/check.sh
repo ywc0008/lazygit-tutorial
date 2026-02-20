@@ -21,7 +21,7 @@ case "$STEP" in
     fi
 
     # config.json is still modified (not yet committed)
-    if ! git status --porcelain | grep -q "config.json"; then
+    if ! git status --porcelain | grep "config.json" >/dev/null; then
       echo "FAIL: config.json should still have uncommitted changes"
       exit 1
     fi
