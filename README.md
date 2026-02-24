@@ -80,19 +80,19 @@ cd lazygit-tutorial
 
 | # | Lesson | 레슨 | Steps |
 |:-:|--------|------|:-----:|
-| 06 | Merge Conflicts | 머지 충돌 해결하기 | 1 |
-| 07 | Stash | Stash 사용하기 | 2 |
-| 08 | Interactive Rebase | 인터랙티브 리베이스 | 1 |
-| 09 | Cherry-pick | Cherry-pick | 1 |
+| 06 | Merge Conflicts | 머지 충돌 해결하기 | 2 |
+| 07 | Stash | Stash 사용하기 | 3 |
+| 08 | Interactive Rebase | 인터랙티브 리베이스 | 2 |
+| 09 | Cherry-pick | Cherry-pick | 2 |
 
 ### Advanced / 고급
 
 | # | Lesson | 레슨 | Steps |
 |:-:|--------|------|:-----:|
-| 10 | Worktree | Worktree | 1 |
-| 11 | Patch Building | 패치 빌딩 (부분 스테이징) | 1 |
-| 12 | Bisect | Bisect로 버그 찾기 | 1 |
-| 13 | Custom Commands | 커스텀 명령어 설정 | 1 |
+| 10 | Worktree | Worktree | 2 |
+| 11 | Patch Building | 패치 빌딩 (부분 스테이징) | 2 |
+| 12 | Bisect | Bisect로 버그 찾기 | 2 |
+| 13 | Custom Commands | 커스텀 명령어 설정 | 2 |
 
 ---
 
