@@ -30,7 +30,7 @@ steps:
         5. Press Escape to go back to the Branches panel
         6. Make sure you are on the main branch
            (select it and press Space to checkout if needed)
-        7. Press Shift+V (uppercase V) to paste (apply)
+        7. Go to the Commits panel (press 4) and hit Shift+V (uppercase V) to paste (apply)
            the cherry-picked commit
 
       Your task:
